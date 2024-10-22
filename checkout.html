@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .checkout-container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Improved Layout for Checkout Items */
+        .checkout-item {
+            display: flex;
+            justify-content: flex-start;  /* Align items to the left */
+            align-items: flex-start;  /* Align to the top of the image */
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .checkout-item img {
+            width: 100px;
+            border-radius: 5px;
+            margin-right: 20px;  /* Space between image and text */
+        }
+
+        .checkout-item-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: calc(100% - 120px); /* Ensuring the details don't overflow */
+        }
+
+        .checkout-item h3 {
+            margin: 0;
+            color: #333;
+            font-size: 1.2em;
+            margin-bottom: 10px;  /* Add spacing between name and price */
+        }
+
+        .checkout-item p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .order-summary {
+            margin-top: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: right;
+            color: #333;
+        }
+
+        .checkout-form {
+            margin-top: 20px;
+        }
+
+        .checkout-form label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .checkout-form input,
+        .checkout-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .place-order-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        .place-order-btn:hover {
+            background-color: #218838;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <span>(+01) - 2345 - 6789</span>
+            <a href="#" class="coupon-link">Super Values Deals - Save more coupons</a>
+        </div>
+  
+        <nav class="main-navbar">
+            <div class="logo">
+                <a href="./index.php"><img src="./img/logo.svg" alt="Evara Logo" /></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="./shop.html">Shop</a></li>
+                <li><a href="./category.html">Category</a></li>
+                <li><a href="./contactus.php">Contact Us</a></li>
+                <li><a href="./about-us.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="checkout-container">
+        <h1>Checkout</h1>
+        <div id="checkout-items"></div>
+        <div class="order-summary" id="order-summary"></div>
+
+        <form class="checkout-form" id="checkout-form" action="checkout.php" method="POST">
+            <h2>Shipping Details</h2>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+            <label for="address">Shipping Address</label>
+            <input type="text" id="address" name="address" required>
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" required>
+            <label for="state">State</label>
+            <input type="text" id="state" name="state" required>
+            <label for="zip">ZIP Code</label>
+            <input type="text" id="zip" name="zip" required>
+
+            <!-- Hidden input to store the total order amount -->
+            <input type="hidden" id="total" name="total">
+            
+            <h2>Payment Method</h2>
+            <p>Cash on Delivery (COD)</p>
+            
+            <button type="submit" class="place-order-btn">Place Order</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to display the items in checkout
+        function displayCheckoutItems() {
+            const checkoutItemsContainer = document.getElementById('checkout-items');
+            const orderSummaryContainer = document.getElementById('order-summary');
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            if (cart.length === 0) {
+                checkoutItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+                orderSummaryContainer.textContent = '';
+            } else {
+                let orderTotal = 0;
+                checkoutItemsContainer.innerHTML = '';
+
+                cart.forEach(product => {
+                    const price = parseFloat(product.price.replace('$', '')); // Parsing price correctly
+                    if (!isNaN(price)) { // Ensuring price is valid
+
+                        const checkoutItem = `
+                            <div class="checkout-item">
+                                <img src="${product.image}" alt="${product.name}">
+                                <div class="checkout-item-info">
+                                    <div>
+                                        <h3>${product.name}</h3>
+                                        <p>Price: $${price.toFixed(2)}</p>
+                                        <p>Quantity: ${product.quantity}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+
+                        checkoutItemsContainer.innerHTML += checkoutItem;
+
+                        // Calculate total price
+                        orderTotal += price * product.quantity;
+                    }
+                });
+
+                // Display the total price
+                orderSummaryContainer.textContent = `Total: $${orderTotal.toFixed(2)}`;
+            }
+        }
+
+        // Handle form submission and send total order amount
+        document.getElementById('checkout-form').addEventListener('submit', function(event) {
+            const orderTotal = document.getElementById('order-summary').textContent.replace('Total: $', '');
+            document.getElementById('total').value = orderTotal;
+        });
+
+        // Load checkout items when the page loads
+        document.addEventListener('DOMContentLoaded', displayCheckoutItems);
+    </script>
+</body>
+</html>

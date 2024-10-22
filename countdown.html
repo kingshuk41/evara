@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Banner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f3f4f6;
+        }
+
+        .banner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+        }
+
+        .deal, .clothing {
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            flex-basis: calc(50% - 40px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #f7fafc;
+            max-width: 400px;
+        }
+
+        .deal img, .clothing img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .deal .price, .clothing .price {
+            font-size: 24px;
+            color: #e53e3e;
+            margin: 10px 0;
+        }
+
+        .deal .old-price, .clothing .old-price {
+            text-decoration: line-through;
+            color: #718096;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 10px;
+        }
+
+        .countdown div {
+            padding: 10px;
+            background-color: #2d3748;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .countdown div span {
+            display: block;
+            font-size: 12px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #48bb78;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 768px) {
+            .deal, .clothing {
+                flex-basis: calc(100% - 40px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="banner">
+    <!-- Deal of the Day -->
+    <div class="deal">
+        <img src="https://via.placeholder.com/150" alt="Deal of the Day">
+        <h2>Deals of the Day</h2>
+        <p>Summer Collection New Modern Design</p>
+        <div class="price">$139.00 <span class="old-price">$160.99</span></div>
+        <div class="countdown" id="countdown1">
+            <div><span id="days1">02</span> Days</div>
+            <div><span id="hours1">22</span> Hours</div>
+            <div><span id="minutes1">57</span> Mins</div>
+            <div><span id="seconds1">28</span> Sec</div>
+        </div>
+        <button>Shop Now</button>
+    </div>
+
+    <!-- Women Clothing -->
+    <div class="clothing">
+        <img src="https://via.placeholder.com/150" alt="Women Clothing">
+        <h2>Women Clothing</h2>
+        <p>Try Something New on Vacation</p>
+        <div class="price">$178.00 <span class="old-price">$256.99</span></div>
+        <div class="countdown" id="countdown2">
+            <div><span id="days2">02</span> Days</div>
+            <div><span id="hours2">22</span> Hours</div>
+            <div><span id="minutes2">57</span> Mins</div>
+            <div><span id="seconds2">28</span> Sec</div>
+        </div>
+        <button>Shop Now</button>
+    </div>
+</div>

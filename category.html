@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Web Icon -->
+    <link rel="icon" href="./img/logo.svg" type="image/x-icon" />
+    <!-- Search Icon -->
+     
+    <!-- FontAwesome for cart icon -->
+
+    
+     <link rel="stylesheet" href="./style/shop.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="./style/usericon.css">
+
+    
+    <!-- Font Awesome -->
+
+
+    <script src="https://kit.fontawesome.com/a33d3e9294.js" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- MDB -->
+
+
+    <link rel="stylesheet" href="css/mdb.min.css" />
+</head>
+<body>
+    <div>
+        <header>
+            <div>
+          <div class="top-bar">
+              <span>(+880) 1764163504</span>
+              
+              <a href="#" class="coupon-link">Style Delivered, Happiness Guaranteed!</a>
+              
+          </div>
+    
+          <nav class="main-navbar">
+              <div class="logo">
+                  <a href="./index.php"><img src="./img/logo.svg" alt="Evara Logo" /></a>
+              </div>
+              <ul class="nav-links">
+                  
+                  <li><a href="./shop.html">Shop</a></li>
+                  
+                  <li><a href="./contactus.html">Contact Us</a></li>
+                  <li><a href="./about-us.html">About Us</a></li>
+              </ul>
+              
+              <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search For Items...">
+                <button class="search-btn" onclick="searchProduct()">
+                  <i class="fa fa-search search-icon"></i>
+                </button>
+              </div>
+              
+        
+            <div id="search-results"></div>  
+              <div class="icons">
+                <a href="./cart.html"><i class="fa fa-shopping-bag"></i><span id="cart-count">0</span></a>
+                
+            </div>
+            <div>
+            <a href="./login.php" class="login-icon"><i class="fa fa-user"></i></a>
+            </div>
+    
+            <div>
+            <a href="logout.php">
+            <i class="fa-solid fa-right-from-bracket"></i>
+      
+            </a>
+            </div>
+            </div>
+        </nav>
+     </div>
+            
+   
+
+    <main>
+        <!-- Feature Category -->
+        <div class="container">
+            <div class="filter-bar">
+                <button class="filter-btn active">All</button>
+                <a href="./men.html"><button class="filter-btn">Men</button></a>
+                <a href="./women.html"><button class="filter-btn">Women</button></a>
+            </div>
+            <div class="product-grid">
+                <!-- Product Cards -->
+                <div class="product-card hot" data-product-id="1">
+                    <span class="badge">Hot</span>
+                    <img src="./img/04.jpg" alt="Colorful Pattern Shirt">
+                    <div class="product-info">
+                        <h3>Colorful Brown Caps</h3>
+                        <span class="category">Men</span>
+                        <div class="price">
+                            <span class="current-price">$238.85</span>
+                            <span class="original-price">$245.8</span>
+                        </div>
+                        <div class="add-to-cart">
+                          <i class="fas fa-shopping-cart" id="add-to-cart"></i> Add to Cart
+                      </div>
+                    </div>
+                </div>
+                <div class="product-card hot" data-product-id="2">
+                  <span class="badge">Hot</span>
+                  <img src="./img/02.jpg" alt="Colorful Pattern Shirt">
+                  <div class="product-info">
+                      <h3>Blue Hoodie</h3>
+                      <span class="category">Men</span>
+                      <div class="price">
+                          <span class="current-price">$238.85</span>
+                          <span class="original-price">$245.8</span>
+                      </div>
+                      <div class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </div>
+                  </div>
+              </div>
+              <div class="product-card hot" data-product-id="3">
+                <span class="badge">Hot</span>
+                <img src="./img/Card1.jpg" alt="Colorful Pattern Shirt">
+                <div class="product-info">
+                    <h3>Blue Satin Shirt </h3>
+                    <span class="category">Men</span>
+                    <div class="price">
+                        <span class="current-price">$238.85</span>
+                        <span class="original-price">$245.8</span>
+                    </div>
+                    <div class="add-to-cart">
+                      <i class="fas fa-shopping-cart"></i> Add to Cart
+                  </div>
+                </div>
+            </div>
+            <div class="product-card hot" data-product-id="4">
+              <span class="badge">Hot</span>
+              <img src="./img/category-1.jpg" alt="Colorful Pattern Shirt">
+              <div class="product-info">
+                  <h3>Floral Short Sleeve Shirt</h3>
+                  <span class="category">Men</span>
+                  <div class="price">
+                      <span class="current-price">$238.85</span>
+                      <span class="original-price">$245.8</span>
+                  </div>
+                  <div class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </div>
+              </div>
+          </div>
+          <div class="product-card hot" data-product-id="5">
+            <span class="badge">Hot</span>
+            <img src="./img/01.jpg" alt="Colorful Pattern Shirt">
+            <div class="product-info">
+                <h3>Orange and White Shoes</h3>
+                <span class="category">Men</span>
+                <div class="price">
+                    <span class="current-price">$238.85</span>
+                    <span class="original-price">$245.8</span>
+                </div>
+                <div class="add-to-cart">
+                  <i class="fas fa-shopping-cart"></i> Add to Cart
+              </div>
+            </div>
+        </div>
+        <div class="product-card hot" data-product-id="6">
+          <span class="badge">Hot</span>
+          <img src="./img/Card2.jpg" alt="Colorful Pattern Shirt">
+          <div class="product-info">
+              <h3>Navy Floral Shirt </h3>
+              <span class="category">Men</span>
+              <div class="price">
+                  <span class="current-price">$238.85</span>
+                  <span class="original-price">$245.8</span>
+              </div>
+              <div class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+            </div>
+          </div>
+      </div>
+      <div class="product-card hot" data-product-id="7">
+        <span class="badge">Hot</span>
+        <img src="./img/Card3.jpg" alt="Colorful Pattern Shirt">
+        <div class="product-info">
+            <h3>Green & White Floral Shirt</h3>
+            <span class="category">Men</span>
+            <div class="price">
+                <span class="current-price">$238.85</span>
+                <span class="original-price">$245.8</span>
+            </div>
+            <div class="add-to-cart">
+              <i class="fas fa-shopping-cart"></i> Add to Cart
+          </div>
+        </div>
+      </div>
+      <div class="product-card hot" data-product-id="8">
+        <span class="badge">Hot</span>
+        <img src="./img/category-2.jpg" alt="Colorful Pattern Shirt">
+        <div class="product-info">
+            <h3>Green Polka Dot Bag</h3>
+            <span class="category">Women</span>
+            <div class="price">
+                <span class="current-price">$238.85</span>
+                <span class="original-price">$245.8</span>
+            </div>
+            <div class="add-to-cart">
+              <i class="fas fa-shopping-cart"></i> Add to Cart
+          </div>
+        </div>
+      </div>
+      <div class="product-card hot" data-product-id="9">
+        <span class="badge">Hot</span>
+        <img src="./img/category-3.jpg" alt="Colorful Pattern Shirt">
+        <div class="product-info">
+            <h3>Green Heeled Sandal</h3>
+            <span class="category">Women</span>
+            <div class="price">
+                <span class="current-price">$238.85</span>
+                <span class="original-price">$245.8</span>
+            </div>
+            <div class="add-to-cart">
+              <i class="fas fa-shopping-cart"></i> Add to Cart
+          </div>
+        </div>
+      </div>
+                <!-- Repeat product cards as necessary -->
+            </div>
+        </div>
+        <section class="product-grid" >
+            <div class="product-card hot" data-product-id="10">
+                
+                <img src="./img/clothes-1.jpg" alt="Colorful Pattern Shirt">
+                <div class="product-info">
+                    <h3>Pink Sweater</h3>
+                    <span class="category">Women</span>
+                    <div class="price">
+                        <span class="current-price">$25</span>
+                        <span class="original-price">$50</span>
+                    </div>
+                    <div class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat for other products -->
+            <div class="product-card" data-product-id="11">
+                <img src="./img/clothes-2.jpg" alt="Classic Black Shirt">
+                <div class="product-info">
+                    <h3>Pink Short Sleeve Shirt</h3>
+                    <span class="category">Women</span>
+                    <div class="price">
+                        <span class="current-price">$20</span>
+                        <span class="original-price">$40</span>
+                    </div>
+                    <div class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </div>
+                </div>
+            </div>
+            <div class="product-card hot" data-product-id="12">
+                
+                <img src="./img/clothes-3.jpg" alt="Colorful Pattern Shirt">
+                <div class="product-info">
+                    <h3>Black Skirt</h3>
+                    <span class="category">Women</span>
+                    <div class="price">
+                        <span class="current-price">$30</span>
+                        <span class="original-price">$60</span>
+                    </div>
+                    <div class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat for other products -->
+            <div class="product-card" data-product-id="13">
+                <img src="./img/clothes-4.jpg" alt="Classic Black Shirt">
+                <div class="product-info">
+                    <h3>Classic Black Shirt</h3>
+                    <span class="category">Women</span>
+                    <div class="price">
+                        <span class="current-price">$120.50</span>
+                        <span class="original-price">$150.00</span>
+                    </div>
+                    <div class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </div>
+                </div>
+            </div>
+            <div class="product-card hot" data-product-id="14">
+                
+                <img src="./img/jacket-1.jpg" alt="Colorful Pattern Shirt">
+                <div class="product-info">
+                    <h3>Brown Leather Jacket</h3>
+                    <span class="category">Men</span>
+                    <div class="price">
+                        <span class="current-price">$238.85</span>
+                        <span class="original-price">$245.8</span>
+                    </div>
+                    <div class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat for other products -->
+            <div class="product-card" data-product-id="15">
+                <img src="./img/jacket-2.jpg" alt="Classic Black Shirt">
+                <div class="product-info">
+                    <h3>Denim Jacket</h3>
+                    <span class="category">Men</span>
+                    <div class="price">
+                        <span class="current-price">$120.50</span>
+                        <span class="original-price">$150.00</span>
+                    </div>
+                    <div class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </div>
+                </div>
+            </div>
+            <div class="product-card hot" data-product-id="16">
+                
+                <img src="./img/jacket-3.jpg" alt="Colorful Pattern Shirt">
+                <div class="product-info">
+                    <h3>Colorful Danim Jacket</h3>
+                    <span class="category">Men</span>
+                    <div class="price">
+                        <span class="current-price">$238.85</span>
+                        <span class="original-price">$245.8</span>
+                    </div>
+                    <div class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat for other products -->
+            <div class="product-card" data-product-id="17">
+                <img src="./img/jacket-4.jpg" alt="Classic Black Shirt">
+                <div class="product-info">
+                    <h3>Classic Danim Jacket</h3>
+                    <span class="category">Men</span>
+                    <div class="price">
+                        <span class="current-price">$120.50</span>
+                        <span class="original-price">$150.00</span>
+                    </div>
+                    <div class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </div>
+                </div>
+            </div>
+            <div class="product-card hot" data-product-id="18">
+                
+                <img src="./img/jacket-5.jpg" alt="Colorful Pattern Shirt">
+                <div class="product-info">
+                    <h3>Brown Coat</h3>
+                    <span class="category">Women</span>
+                    <div class="price">
+                        <span class="current-price">$238.85</span>
+                        <span class="original-price">$245.8</span>
+                    </div>
+                    <div class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat for other products -->
+            <div class="product-card" data-product-id="19">
+                <img src="./img/jacket-6.jpg" alt="Classic Black Shirt">
+                <div class="product-info">
+                    <h3>Classic Brown Coat</h3>
+                    <span class="category">Women</span>
+                    <div class="price">
+                        <span class="current-price">$120.50</span>
+                        <span class="original-price">$150.00</span>
+                    </div>
+                    <div class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </div>
+                </div>
+            </div>
+            <div class="product-card hot" data-product-id="20">
+                
+                <img src="./img/jewellery-1.jpg" alt="Colorful Pattern Shirt">
+                <div class="product-info">
+                    <h3>Gold Embellished Earrings</h3>
+                    <span class="category">Women</span>
+                    <div class="price">
+                        <span class="current-price">$238.85</span>
+                        <span class="original-price">$245.8</span>
+                    </div>
+                    <div class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat for other products -->
+            <div class="product-card" data-product-id="21">
+                <img src="./img/jewellery-2.jpg" alt="Classic Black Shirt">
+                <div class="product-info">
+                    <h3>Floral Crystal Brooch
+                    </h3>
+                    <span class="category">Women</span>
+                    <div class="price">
+                        <span class="current-price">$120.50</span>
+                        <span class="original-price">$150.00</span>
+                    </div>
+                    <div class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </div>
+                </div>
+            </div>
+            <div class="product-card hot" data-product-id="22">
+                
+                <img src="./img/jewellery-3.jpg" alt="Colorful Pattern Shirt">
+                <div class="product-info">
+                    <h3>Statement Necklace with Gemstones</h3>
+                    <span class="category">Women</span>
+                    <div class="price">
+                        <span class="current-price">$238.85</span>
+                        <span class="original-price">$245.8</span>
+                    </div>
+                    <div class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat for other products -->
+            <div class="product-card" data-product-id="23">
+                <img src="./img/category-2.jpg" alt="Classic Black Shirt">
+                <div class="product-info">
+                    <h3>Green Polka Dot Bag</h3>
+                    <span class="category">Women</span>
+                    <div class="price">
+                        <span class="current-price">$120.50</span>
+                        <span class="original-price">$150.00</span>
+                    </div>
+                    <div class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </div>
+                </div>
+            </div>
+            <div class="product-card hot" data-product-id="24">
+                
+                <img src="./img/party-wear-2.jpg" alt="Colorful Pattern Shirt">
+                <div class="product-info">
+                    <h3>Heeled Sandals</h3>
+                    <span class="category">Women</span>
+                    <div class="price">
+                        <span class="current-price">$238.85</span>
+                        <span class="original-price">$245.8</span>
+                    </div>
+                    <div class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat for other products -->
+            <div class="product-card" data-product-id="25">
+                <img src="./img/perfume.jpg" alt="Classic Black Shirt">
+                <div class="product-info">
+                    <h3>Perfume Bottle</h3>
+                    <span class="category">all</span>
+                    <div class="price">
+                        <span class="current-price">$120.50</span>
+                        <span class="original-price">$150.00</span>
+                    </div>
+                    <div class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </div>
+                </div>
+            </div>
+            <div class="product-card hot" data-product-id="26">
+                
+                <img src="./img/shampoo.jpg" alt="Colorful Pattern Shirt">
+                <div class="product-info">
+                    <h3>Women Anty Dendrive shampoo</h3>
+                    <span class="category">Women</span>
+                    <div class="price">
+                        <span class="current-price">$238.85</span>
+                        <span class="original-price">$245.8</span>
+                    </div>
+                    <div class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat for other products -->
+            <div class="product-card" data-product-id="27">
+                <img src="./img/shirt-1.jpg" alt="Classic Black Shirt">
+                <div class="product-info">
+                    <h3>Classic Black Shirt</h3>
+                    <span class="category">Men</span>
+                    <div class="price">
+                        <span class="current-price">$120.50</span>
+                        <span class="original-price">$150.00</span>
+                    </div>
+                    <div class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </div>
+                </div>
+            </div>
+            <div class="product-card hot" data-product-id="28">
+                
+                <img src="./img/shirt-2.jpg" alt="Colorful Pattern Shirt">
+                <div class="product-info">
+                    <h3>Classic White Shirt</h3>
+                    <span class="category">Men</span>
+                    <div class="price">
+                        <span class="current-price">$238.85</span>
+                        <span class="original-price">$245.8</span>
+                    </div>
+                    <div class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat for other products -->
+            <div class="product-card" data-product-id="29">
+                <img src="./img/shoe-1.jpg" alt="Classic Black Shirt">
+                <div class="product-info">
+                    <h3>Men's Dress Shoes</h3>
+                    <span class="category">Men</span>
+                    <div class="price">
+                        <span class="current-price">$120.50</span>
+                        <span class="original-price">$150.00</span>
+                    </div>
+                    <div class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </div>
+                </div>
+            </div>
+            <!-- More product cards can be added here -->
+        </section>
+        <script src="./js/addtocartcount.js">
+    
+        </script>
+    </main>
+
+
+ <!-- Footer -->
+ <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block">
+        <span>Get connected with us on social networks:</span>
+      </div>
+      <!-- Left -->
+  
+      <!-- Right -->
+      <div>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+  
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i><img src="./img/logo.svg" alt="">
+            </h6>
+            <p>
+             <b>"Style Delivered, Happiness Guaranteed!"</b> 
+          Perfect for conveying customer satisfaction with a focus on delivering quality products.
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Products
+            </h6>
+            <p>
+              <a href="./men.html" class="text-reset">Men</a>
+            </p>
+            <p>
+              <a href="./women.html" class="text-reset">Women</a>
+            </p>
+            
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Useful links
+            </h6>
+            <p>
+              <a href="./about-us.html" class="text-reset">About Us</a>
+            </p>
+            <p>
+              <a href="./contactus.php" class="text-reset">Contact Us</a>
+            </p>
+            <p>
+              <a href="./shop.html" class="text-reset">Shop Now</a>
+            </p>
+           
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3"></i> Mymensingh, 2200, BD</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              info@evara.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> + 880 1764163504</p>
+            <p><i class="fas fa-print me-3"></i> + 880 1630557809</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © All Right Reserve 2024
+      
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+
+ <!-- Search Item  -->
+
+ <script>
+    function searchProduct() {
+      const input = document.getElementById("search-input").value.toLowerCase();
+      const productCards = document.querySelectorAll(".product-card");
+  
+      productCards.forEach((card) => {
+        const productName = card.querySelector("h3").innerText.toLowerCase();
+        if (productName.includes(input)) {
+          card.style.display = "block"; // Show matching product
+        } else {
+          card.style.display = "none"; // Hide non-matching product
+        }
+      });
+    }
+  </script>
+
+
+<!-- .............................................................. -->
+
+
+
+
+<!-- Add To Cart Icon and View Page  -->
+
+<script>
+    // Function to update the cart count in the icon
+  function updateCartCount() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartCountElement = document.getElementById('cart-count');
+      cartCountElement.textContent = cart.length;
+  }
+  
+  // Function to add product to cart
+  function addToCart(event) {
+      const productCard = event.target.closest('.product-card');
+      
+      // Get product information from the card
+      const productId = productCard.dataset.productId;  // Assuming product-card has a data-product-id attribute
+      const productName = productCard.querySelector('h3').textContent;
+      const productPrice = productCard.querySelector('.current-price').textContent;
+      const productImage = productCard.querySelector('img').src;
+  
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      
+      // Check if the product is already in the cart
+      const existingProduct = cart.find(item => item.id === productId);
+      
+      if (existingProduct) {
+          // If product is already in cart, increase the quantity
+          existingProduct.quantity++;
+      } else {
+          // If product is not in the cart, add it
+          const newProduct = {
+              id: productId,
+              name: productName,
+              price: productPrice,
+              image: productImage,
+              quantity: 1
+          };
+          cart.push(newProduct);
+      }
+  
+      // Save the updated cart to localStorage
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount();  // Update the cart count
+      alert(`${productName} has been added to your cart!`);
+  }
+  
+  // Redirect to cart page when clicking on the cart icon
+  document.querySelector('.icons a').addEventListener('click', (event) => {
+      event.preventDefault();  // Prevent default link behavior
+      window.location.href = 'cart.html';  // Redirect to the cart page
+  });
+  
+  // Add event listeners to all "Add to Cart" buttons
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', addToCart);
+  });
+  
+  // Ensure the cart count is updated when the page loads
+  document.addEventListener('DOMContentLoaded', updateCartCount);
+  
+   </script>
+  
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

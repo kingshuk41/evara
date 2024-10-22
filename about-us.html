@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .about-us-container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            flex: 1 1 30%;
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .team-member h3 {
+            margin: 10px 0 5px 0;
+            color: #333;
+        }
+
+        .team-member p {
+            margin: 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="top-bar">
+            <span>(+01) - 2345 - 6789</span>
+            <a href="#" class="coupon-link">Super Values Deals - Save more coupons</a>
+        </div>
+  
+        <nav class="main-navbar">
+            <div class="logo">
+                <a href="./index.php"><img src="./img/logo.svg" alt="Evara Logo" /></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="./shop.html">Shop</a></li>
+                <li><a href="./category.html">Category</a></li>
+                <li><a href="./contactus.php">Contact Us</a></li>
+                <li><a href="./about-us.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="about-us-container" id="about-us">
+        <h1>About Us</h1>
+        <div class="section" id="about-company"></div>
+        <div class="section" id="about-mission"></div>
+        <div class="section" id="about-team"></div>
+    </div>
+
+    <script>
+        // Data for the "About Us" content
+        const aboutUsContent = {
+            company: {
+                title: "Who We Are",
+                description: "We are a passionate team dedicated to providing top-quality products for our customers. Our e-commerce platform is built on trust, customer satisfaction, and continuous improvement. Since our inception, we have been committed to delivering a seamless shopping experience.",
+                image: "./img/company-1.jpg"
+            },
+            mission: {
+                title: "Our Mission",
+                description: "Our mission is to make online shopping easy, accessible, and enjoyable. We strive to bring the best products from around the world to your doorstep. Customer satisfaction is at the heart of everything we do, and we constantly seek new ways to exceed expectations.",
+                image: "./img/company-2.jpg"
+            },
+            team: {
+                title: "Meet Our Team",
+                members: [
+                    {
+                        name: "John Doe",
+                        position: "CEO & Founder",
+                        image: "./img/team-john.jpg",
+                        bio: "John founded the company with a vision to transform the e-commerce experience for customers everywhere."
+                    },
+                    {
+                        name: "Jane Smith",
+                        position: "Chief Marketing Officer",
+                        image: "./img/team-jane.jpg",
+                        bio: "Jane leads the marketing team with innovative strategies and a passion for brand growth."
+                    },
+                    {
+                        name: "Tom Wilson",
+                        position: "Head of Product Development",
+                        image: "./img/team-tom.jpg",
+                        bio: "Tom oversees the development of our products, ensuring top quality and user satisfaction."
+                    }
+                ]
+            }
+        };
+
+        // Function to dynamically display the "About Us" content
+        function displayAboutUsContent() {
+            const aboutCompanyContainer = document.getElementById('about-company');
+            const aboutMissionContainer = document.getElementById('about-mission');
+            const aboutTeamContainer = document.getElementById('about-team');
+
+            // Company Section
+            aboutCompanyContainer.innerHTML = `
+                <h2>${aboutUsContent.company.title}</h2>
+                <p>${aboutUsContent.company.description}</p>
+                <img src="${aboutUsContent.company.image}" alt="About Our Company">
+            `;
+
+            // Mission Section
+            aboutMissionContainer.innerHTML = `
+                <h2>${aboutUsContent.mission.title}</h2>
+                <p>${aboutUsContent.mission.description}</p>
+                <img src="${aboutUsContent.mission.image}" alt="Our Mission">
+            `;
+
+            // Team Section
+            aboutTeamContainer.innerHTML = `
+                <h2>${aboutUsContent.team.title}</h2>
+                <div class="team-members">
+                    ${aboutUsContent.team.members.map(member => `
+                        <div class="team-member">
+                            <img src="${member.image}" alt="${member.name}">
+                            <h3>${member.name}</h3>
+                            <p><strong>${member.position}</strong></p>
+                            <p>${member.bio}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        // Load the content when the page is loaded
+        document.addEventListener('DOMContentLoaded', displayAboutUsContent);
+    </script>
+
+</body>
+</html>
